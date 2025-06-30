@@ -43,7 +43,7 @@ async def get_phone_contact(message: Message, state: FSMContext):
 
     await state.update_data(phone=phone)
     data = await state.get_data()
-
+    await message.answer("✅ So'rovingiz yuborildi", reply_markup=main_menu())
     msg = (
         f"📥 Yangi bog'lanish so'rovi:\n\n"
         f"👤 Ismi: {data['name']}\n"
