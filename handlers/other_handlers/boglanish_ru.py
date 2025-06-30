@@ -64,7 +64,7 @@ async def get_phone_text(message: Message, state: FSMContext):
     if len(text) == 13 and text.startswith('+998') and text[1:].isdigit():
         await state.update_data(phone=text)
         data = await state.get_data()
-
+        await message.answer("✅ Ваш запрос отправлен", reply_markup=main_menu_ru())
         msg = (
             f"📥 Yangi bog'lanish so'rovi:\n\n"
             f"👤 Ismi: {data['name']}\n"
